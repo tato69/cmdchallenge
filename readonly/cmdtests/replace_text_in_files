@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if ! [[ $(find . -name "*.txt" | wc -l) == 3 ]]; then
+    echo "Test failed, expecting 3 text files"
+    exit 1
+fi
+
+if ! [[ $(find . -name "*.txt" -print0 | xargs -0 -n1 grep "challenges are difficult") == "" ]]; then
+    echo "Test failed, found the string 'challenges are difficult'"
+    exit 1
+fi
+
+if ! grep -q "challenges are difficult" README; then
+    echo "Test failed, files without .txt extension must remain unmodified"
+    exit 1
+fi
+
+exit 0

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if ! [[ $(find . -type f | wc -l) == 2 ]]; then
+    echo "Test failed, expecting 2 files."
+    exit 1
+fi
+
+if ! [[ $(find . -name "-*" | wc -l) == 0 ]]; then
+    echo "Test failed, files with dashes exist."
+    exit 1
+fi
+
+exit 0

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if ! [[ $(find .) == "." ]]; then
+    echo "Test failed, files or directories remain"
+    exit 1
+fi
+
+exit 0

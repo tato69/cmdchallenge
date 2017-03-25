@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if ! [[ $(find . -type f | wc -l) == 4 ]]; then
+    echo "Test failed, expecting 4 files."
+    exit 1
+fi
+
+if ! [[ $(find . -name "*.txt" | wc -l) == 3 ]]; then
+    echo "Test failed, expecting 3 files with a .txt extension."
+    exit 1
+fi
+
+if ! [[ $(find . -name "*.exe" | wc -l) == 1 ]]; then
+    echo "Test failed, expecting 1 files with a .exe extension."
+    exit 1
+fi
+
+exit 0

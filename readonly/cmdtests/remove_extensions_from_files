@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if ! [[ $(find . -type f -name "*.*") == "" ]]; then
+    echo "Test failed, there are still files with extensions in the current directory."
+    exit 1
+fi
+
+if ! [[ $(find . -type f | wc -l) == 9 ]]; then
+    echo "Test failed, expecting 9 files"
+    exit 1
+fi
+
+exit 0

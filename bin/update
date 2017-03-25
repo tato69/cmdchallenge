@@ -9,5 +9,8 @@ y = yaml.load(open('challenges.yaml').read())
 
 with open(os.path.join(dir_path, '../../onthecmdline/static/challenges/challenges.json'), 'w') as f:
     f.write(json.dumps(y))
+with open(os.path.join(dir_path, '../readonly/challenges.json'), 'w') as f:
+    f.write(json.dumps(y))
+
 
 
